@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"go/format"
-	"io/ioutil"
+	"os"
 	"strings"
 	"text/template"
 )
@@ -76,7 +76,7 @@ func generatePackageFiles() {
 		if offset == -1 {
 			panic("Missing template warning in pkg.templ.go")
 		}
-		err = ioutil.WriteFile(mode.Pkg()+"/params.go", []byte(res[offset:]), 0o600)
+		err = os.WriteFile(mode.Pkg()+"/params.go", []byte(res[offset:]), 0o600)
 		if err != nil {
 			panic(err)
 		}
@@ -107,7 +107,7 @@ func generateLPRFiles() {
 		if offset == -1 {
 			panic("Missing template warning in pkg.templ.go")
 		}
-		err = ioutil.WriteFile(mode.Pkg()+"/params.go", []byte(res[offset:]), 0o600)
+		err = os.WriteFile(mode.Pkg()+"/params.go", []byte(res[offset:]), 0o600)
 		if err != nil {
 			panic(err)
 		}

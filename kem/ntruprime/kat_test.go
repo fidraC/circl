@@ -8,7 +8,7 @@ import (
 
 	"github.com/cloudflare/circl/internal/nist"
 	"github.com/cloudflare/circl/kem/schemes"
-	sntrupSchemes "github.com/cloudflare/circl/pke/ntruprime/kem/schemes/sntrup"
+	sntrupSchemes "github.com/cloudflare/circl/pke/ntruprime/kem/schemes/sntrupschemes"
 )
 
 func TestPQCgenStreamlinedKATKem(t *testing.T) {

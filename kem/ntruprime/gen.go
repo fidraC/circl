@@ -6,7 +6,7 @@ package main
 import (
 	"bytes"
 	"go/format"
-	"io/ioutil"
+	"os"
 	"strings"
 	"text/template"
 )
@@ -69,7 +69,7 @@ func generateStreamlinedPackageFiles() {
 		if offset == -1 {
 			panic("Missing template warning in pkg.templ.go")
 		}
-		err = ioutil.WriteFile(mode.Pkg()+"/ntruprime.go", []byte(res[offset:]), 0o644)
+		err = os.WriteFile(mode.Pkg()+"/ntruprime.go", []byte(res[offset:]), 0o644)
 		if err != nil {
 			panic(err)
 		}
@@ -100,7 +100,7 @@ func generateLPRPackageFiles() {
 		if offset == -1 {
 			panic("Missing template warning in pkg.templ.go")
 		}
-		err = ioutil.WriteFile(mode.Pkg()+"/ntruprime.go", []byte(res[offset:]), 0o644)
+		err = os.WriteFile(mode.Pkg()+"/ntruprime.go", []byte(res[offset:]), 0o644)
 		if err != nil {
 			panic(err)
 		}
@@ -131,7 +131,7 @@ func generateKAT() {
 		if offset == -1 {
 			panic("Missing template warning in pkg.templ.go")
 		}
-		err = ioutil.WriteFile(mode.Pkg()+"/kat_test.go", []byte(res[offset:]), 0o600)
+		err = os.WriteFile(mode.Pkg()+"/kat_test.go", []byte(res[offset:]), 0o600)
 		if err != nil {
 			panic(err)
 		}
