@@ -9,7 +9,7 @@ import (
 	"bytes"
 	"fmt"
 	"go/format"
-	"io/ioutil"
+	"os"
 	"strings"
 	"text/template"
 )
@@ -68,7 +68,7 @@ func generatePackageFiles() {
 		if offset == -1 {
 			panic("Missing template warning in pkg.templ.go")
 		}
-		err = ioutil.WriteFile(mode.Pkg()+"/sike.go", []byte(res[offset:]), 0o644)
+		err = os.WriteFile(mode.Pkg()+"/sike.go", []byte(res[offset:]), 0o644)
 		if err != nil {
 			panic(err)
 		}
