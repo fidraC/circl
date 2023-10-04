@@ -5,7 +5,7 @@
 // Post-quantum kems:
 //
 //	SNTRUP653, SNTRUP761, SNTRUP857, SNTRUP953, SNTRUP1013, SNTRUP1277
-package sntrupSchemes
+package sntrupschemes
 
 import (
 	"strings"
